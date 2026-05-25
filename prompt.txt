@@ -1,0 +1,130 @@
+Create a clean and production-ready MVP URL shortener web application using Django and Django REST Framework.
+
+Project goal:
+Build a simple but modern URL shortener SaaS MVP with:
+
+* custom short links
+* QR code generation
+* click tracking
+* simple dashboard
+* authentication
+* responsive frontend
+
+Important:
+This is an MVP project.
+Do NOT overengineer the architecture.
+Avoid unnecessary enterprise complexity.
+
+Tech stack:
+
+* Django 5+
+* Django REST Framework
+* SQLite (Aiosqlite)
+* Django Templates
+* HTML + CSS + minimal JavaScript
+* Bootstrap or TailwindCSS
+* JWT authentication
+* Google OAuth login
+* Gunicorn
+* Environment-based settings
+
+DO NOT USE:
+
+* Docker
+* Redis
+* Celery
+* Kubernetes
+* Microservices
+* Complex frontend frameworks
+* React or Next.js
+
+Core features:
+
+1. Shorten long URLs
+2. Custom aliases
+3. QR code generation
+4. URL redirect handling
+5. Click analytics
+6. User authentication
+7. Google login
+8. Dashboard for managing links
+9. Copy short link button
+10. Mobile responsive UI
+
+Frontend requirements:
+
+* Use Django Templates only
+* Modern SaaS-like UI
+* Responsive design
+* Clean landing page
+* Dashboard page
+* Login/Register pages
+* Google Sign-In button
+* URL analytics page
+* QR code modal/page
+
+Backend requirements:
+
+* Clean Django app structure
+* Proper models and relationships
+* Service layer for business logic
+* Serializer validation
+* Secure redirect validation
+* Centralized error handling
+* Logging system
+* Environment variables support
+
+Suggested structure:
+
+* apps/accounts
+* apps/shortener
+* apps/analytics
+* apps/common
+
+Analytics:
+
+* Total clicks
+* Browser/device detection
+* Country tracking if possible
+* Daily click stats
+
+Security:
+
+* CSRF protection
+* Input sanitization
+* Rate limiting for anonymous users
+* Secure JWT handling
+* XSS prevention
+
+UI/UX:
+
+* Smooth modern interface
+* Dark/light mode optional
+* Toast notifications
+* Empty states
+* Loading states
+* Clean typography
+
+Need:
+
+* COMPLETE working source code
+* Models
+* Views
+* Templates
+* CSS files
+* Authentication flow
+* Google OAuth setup
+* QR code generation logic
+* Full project structure
+* Requirements.txt
+* Setup instructions
+* Production deployment guide with Gunicorn + Nginx
+
+Important instructions:
+
+* No pseudo code
+* No TODO comments
+* Generate fully working implementation
+* Keep code clean and maintainable
+* Prioritize simplicity and real usability
+* Build like a real startup MVP
