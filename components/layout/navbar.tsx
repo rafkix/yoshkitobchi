@@ -59,11 +59,12 @@ export default function Navbar() {
         transition-all
         duration-300
 
-        ${isScrolled
-          ? `
-              bg-[rgba(255,255,255,0.45)]
+        ${
+          isScrolled
+            ? `
+              bg-[rgba(255,255,255,0.72)]
 
-              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.28)]
+              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.58)]
 
               backdrop-blur-2xl
               backdrop-saturate-150
@@ -71,9 +72,12 @@ export default function Navbar() {
               border-b
               border-white/30
 
-              shadow-[0_8px_40px_rgba(99,102,241,0.05)]
+              shadow-[0_8px_40px_rgba(99,102,241,0.06)]
             `
-          : 'bg-transparent'
+            : `
+              bg-white
+              lg:bg-transparent
+            `
         }
       `}
     >
@@ -92,7 +96,7 @@ export default function Navbar() {
         "
       />
 
-      {/* BLUR ORB */}
+      {/* SOFT ORB */}
       <div
         className="
           absolute
@@ -107,6 +111,7 @@ export default function Navbar() {
 
           bg-indigo-300/10
           blur-3xl
+
           pointer-events-none
         "
       />
@@ -118,6 +123,7 @@ export default function Navbar() {
             href="/"
             className="
               shrink-0
+
               transition-transform
               duration-300
 
@@ -325,26 +331,21 @@ export default function Navbar() {
             className="
               lg:hidden
 
-              relative
-
               w-11
               h-11
 
               rounded-2xl
 
               border
-              border-white/40
+              border-gray-200
 
-              bg-[rgba(255,255,255,0.35)]
-
-              backdrop-blur-xl
-              backdrop-saturate-150
+              bg-white
 
               flex
               items-center
               justify-center
 
-              shadow-[0_4px_20px_rgba(99,102,241,0.08)]
+              shadow-[0_4px_20px_rgba(15,23,42,0.06)]
 
               transition-all
               duration-300
@@ -373,18 +374,15 @@ export default function Navbar() {
               lg:hidden
 
               border-t
-              border-white/30
+              border-gray-100
 
-              bg-[rgba(255,255,255,0.38)]
+              bg-white
 
-              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.24)]
-
-              backdrop-blur-2xl
-              backdrop-saturate-150
+              shadow-[0_20px_60px_rgba(15,23,42,0.08)]
             "
           >
             <div className="px-5 py-5 flex flex-col gap-2">
-              {/* MOBILE NAV ITEMS */}
+              {/* MOBILE NAV */}
               {navItems.map((item) => (
                 <a
                   key={item.label}
@@ -401,7 +399,7 @@ export default function Navbar() {
 
                     text-slate-700
 
-                    hover:bg-indigo-50/70
+                    hover:bg-indigo-50
                     hover:text-indigo-600
 
                     transition-all
@@ -431,16 +429,14 @@ export default function Navbar() {
                     rounded-2xl
 
                     border
-                    border-white/40
+                    border-indigo-200
 
-                    bg-[rgba(255,255,255,0.45)]
-
-                    backdrop-blur-xl
+                    bg-indigo-50
 
                     text-indigo-600
                     text-center
 
-                    shadow-[0_4px_20px_rgba(99,102,241,0.08)]
+                    font-semibold
 
                     transition-all
                     duration-300
