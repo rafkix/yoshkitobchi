@@ -13,58 +13,185 @@ export default function AboutPage() {
             <Navbar />
 
             <main className="relative overflow-hidden bg-[#f0effa] text-slate-900">
-                <div className="absolute inset-0 z-0 pointer-events-none" style={{ background: '#f0effa' }}>
-                    {/* Top-left partial sphere */}
-                    <div className="absolute -top-24 -left-20 w-64 h-64 rounded-full"
-                        style={{ background: 'radial-gradient(circle at 55% 55%, #e8e4fd, #c8c1f7 60%, #a89ef2)' }} />
+                {/* GLOBAL BACKGROUND */}
+                <div className="absolute inset-0 z-0 overflow-hidden pointer-events-none">
 
-                    {/* Main large sphere — top right */}
-                    <div className="absolute -top-16 -right-24 w-[420px] h-[420px] rounded-full"
-                        style={{ background: 'radial-gradient(circle at 38% 38%, #c4bff5, #9d97f0 30%, #7b72e8 60%, #6459d4)' }} />
+                    {/* BASE */}
+                    <div className="absolute inset-0 bg-[#f7f7fb]" />
 
-                    {/* Arc ring */}
-                    <div className="absolute top-5 -right-28 w-[500px] h-[500px] rounded-full border-2 border-[rgba(180,170,240,0.35)]" />
+                    {/* DESKTOP BACKGROUND */}
+                    <div className="hidden md:block">
+                        {/* Top-left sphere */}
+                        <div
+                            className="
+        absolute
+        -top-24
+        -left-20
+        w-64
+        h-64
+        rounded-full
+      "
+                            style={{
+                                background:
+                                    'radial-gradient(circle at 55% 55%, #e8e4fd, #c8c1f7 60%, #a89ef2)',
+                            }}
+                        />
 
-                    {/* Left-bottom purple blob — endi % bilan joylashtirilgan */}
-                    <div className="absolute bottom-[5%] -left-16 w-72 h-72 rounded-full"
-                        style={{ background: 'radial-gradient(circle at 40% 35%, #d0abf5, #b57fee 40%, #9055d4)' }} />
+                        {/* Main sphere */}
+                        <div
+                            className="
+        absolute
+        -top-16
+        -right-24
+        w-[420px]
+        h-[420px]
+        rounded-full
+      "
+                            style={{
+                                background:
+                                    'radial-gradient(circle at 38% 38%, #c4bff5, #9d97f0 30%, #7b72e8 60%, #6459d4)',
+                            }}
+                        />
 
-                    {/* Small sphere */}
-                    <div className="absolute top-16 right-[310px] w-10 h-10 rounded-full"
-                        style={{ background: 'radial-gradient(circle at 38% 35%, #d5cff8, #9f98e8 60%, #7a72d6)' }} />
+                        {/* Arc */}
+                        <div
+                            className="
+        absolute
+        top-5
+        -right-28
+        w-[500px]
+        h-[500px]
+        rounded-full
+        border-2
+        border-[rgba(180,170,240,0.35)]
+      "
+                        />
 
-                    {/* Dot grid — left */}
-                    <div className="absolute top-[35%] left-7 grid grid-cols-6 gap-[7px]">
-                        {Array.from({ length: 18 }).map((_, i) => (
-                            <div key={i} className="w-[3px] h-[3px] rounded-full bg-[rgba(140,128,210,0.45)]" />
-                        ))}
+                        {/* Bottom left */}
+                        <div
+                            className="
+        absolute
+        bottom-[5%]
+        -left-16
+        w-72
+        h-72
+        rounded-full
+      "
+                            style={{
+                                background:
+                                    'radial-gradient(circle at 40% 35%, #d0abf5, #b57fee 40%, #9055d4)',
+                            }}
+                        />
                     </div>
 
-                    {/* Dot grid — right */}
-                    <div className="absolute bottom-[10%] right-28 grid grid-cols-7 gap-[7px]">
-                        {Array.from({ length: 21 }).map((_, i) => (
-                            <div key={i} className="w-[3px] h-[3px] rounded-full bg-[rgba(140,128,210,0.45)]" />
-                        ))}
+                    {/* MOBILE BACKGROUND */}
+                    <div className="md:hidden">
+
+                        {/* TOP PURPLE GRADIENT */}
+                        <div
+                            className="
+        absolute
+        top-0
+        left-0
+        right-0
+        h-[340px]
+      "
+                            style={{
+                                background:
+                                    'linear-gradient(180deg, #dad5ff 0%, #ece9ff 40%, rgba(247,247,251,0) 100%)',
+                            }}
+                        />
+
+                        {/* MAIN HERO BLOB */}
+                        <div
+                            className="
+        absolute
+        -top-24
+        right-[-120px]
+
+        w-[340px]
+        h-[340px]
+
+        rounded-full
+      "
+                            style={{
+                                background:
+                                    'radial-gradient(circle at 40% 40%, #8b80ff 0%, #6d63f0 40%, #5b52d6 70%, transparent 100%)',
+                                opacity: 0.9,
+                                filter: 'blur(2px)',
+                            }}
+                        />
+
+                        {/* SECONDARY LIGHT ORB */}
+                        <div
+                            className="
+        absolute
+        top-[120px]
+        left-[-100px]
+
+        w-[220px]
+        h-[220px]
+
+        rounded-full
+      "
+                            style={{
+                                background:
+                                    'radial-gradient(circle at 50% 50%, #ffffff 0%, #ece8ff 60%, transparent 100%)',
+                            }}
+                        />
+
+                        {/* SOFT RING */}
+                        <div
+                            className="
+        absolute
+        top-[60px]
+        right-[-140px]
+
+        w-[380px]
+        h-[380px]
+
+        rounded-full
+        border
+        border-[#cfc8ff]
+      "
+                            style={{
+                                opacity: 0.5,
+                            }}
+                        />
+
+                        {/* BOTTOM LIGHT */}
+                        <div
+                            className="
+        absolute
+        bottom-0
+        left-1/2
+        -translate-x-1/2
+
+        w-[420px]
+        h-[220px]
+
+        rounded-full
+      "
+                            style={{
+                                background:
+                                    'radial-gradient(ellipse, rgba(139,128,255,0.12) 0%, transparent 70%)',
+                            }}
+                        />
                     </div>
 
-                    {/* Small open rings */}
-                    <div className="absolute top-[30%] right-40 w-5 h-5 rounded-full border-2 border-[rgba(140,128,210,0.5)]" />
-                    <div className="absolute bottom-[12%] left-8 w-5 h-5 rounded-full border-2 border-[rgba(140,128,210,0.5)]" />
-
-                    {/* Center white glow */}
-                    <div className="absolute top-[20%] left-[42%] -translate-x-1/2 -translate-y-1/2 w-[420px] h-[280px] rounded-full"
-                        style={{ background: 'radial-gradient(ellipse, rgba(255,255,255,0.9) 0%, rgba(240,238,255,0.4) 60%, transparent 100%)' }} />
-
-                    {/* MID-PAGE — sahifa o'rtasi uchun qo'shimcha sferalar */}
-                    <div className="absolute top-[45%] -right-20 w-80 h-80 rounded-full"
-                        style={{ background: 'radial-gradient(circle at 38% 38%, #d5d0fa, #a89ef0 40%, #7b72e0 100%)' }} />
-
-                    <div className="absolute top-[60%] -left-24 w-64 h-64 rounded-full"
-                        style={{ background: 'radial-gradient(circle at 50% 45%, #e2ddfb, #c0b8f5 50%, #9088e0 100%)' }} />
-
-                    {/* BOTTOM — sahifa oxiri uchun */}
-                    <div className="absolute bottom-[2%] -right-16 w-56 h-56 rounded-full"
-                        style={{ background: 'radial-gradient(circle at 40% 40%, #dcd7fa, #b8b2f0 50%, #9990e4)' }} />
+                    {/* GLOBAL NOISE */}
+                    <div
+                        className="
+      absolute
+      inset-0
+      opacity-[0.03]
+    "
+                        style={{
+                            backgroundImage:
+                                'radial-gradient(rgba(80,70,180,0.6) 0.5px, transparent 0.5px)',
+                            backgroundSize: '6px 6px',
+                        }}
+                    />
                 </div>
                 <div className="relative z-10">
                     <AboutHeroSection />

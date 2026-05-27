@@ -134,8 +134,8 @@ export default function Navbar() {
               src="/logo.png"
               alt="YOSHKITOBCHI"
               className="
-                h-12
-                md:h-14
+                h-14
+                md:h-24
 
                 w-auto
                 object-contain
