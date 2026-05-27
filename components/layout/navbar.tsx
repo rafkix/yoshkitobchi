@@ -17,11 +17,15 @@ export default function Navbar() {
   const [mobileOpen, setMobileOpen] = useState(false)
 
   useEffect(() => {
-    const onScroll = () => setIsScrolled(window.scrollY > 10)
+    const onScroll = () => {
+      setIsScrolled(window.scrollY > 10)
+    }
 
     window.addEventListener('scroll', onScroll)
 
-    return () => window.removeEventListener('scroll', onScroll)
+    return () => {
+      window.removeEventListener('scroll', onScroll)
+    }
   }, [])
 
   useEffect(() => {
@@ -57,27 +61,76 @@ export default function Navbar() {
 
         ${isScrolled
           ? `
-              bg-white/72
-              backdrop-blur-2xl
-              border-b
-              border-white/40
+              bg-[rgba(255,255,255,0.45)]
 
-              shadow-[0_8px_40px_rgba(99,102,241,0.06)]
+              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.28)]
+
+              backdrop-blur-2xl
+              backdrop-saturate-150
+
+              border-b
+              border-white/30
+
+              shadow-[0_8px_40px_rgba(99,102,241,0.05)]
             `
           : 'bg-transparent'
         }
       `}
     >
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+      {/* TOP LIGHT */}
+      <div
+        className="
+          absolute
+          inset-x-0
+          top-0
+          h-px
+
+          bg-gradient-to-r
+          from-transparent
+          via-white/70
+          to-transparent
+        "
+      />
+
+      {/* BLUR ORB */}
+      <div
+        className="
+          absolute
+          top-[-120px]
+          left-1/2
+          -translate-x-1/2
+
+          w-[500px]
+          h-[220px]
+
+          rounded-full
+
+          bg-indigo-300/10
+          blur-3xl
+          pointer-events-none
+        "
+      />
+
+      <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         <div className="h-[88px] flex items-center justify-between">
           {/* LOGO */}
-          <Link href="/" className="shrink-0">
+          <Link
+            href="/"
+            className="
+              shrink-0
+              transition-transform
+              duration-300
+
+              hover:scale-[1.02]
+            "
+          >
             <img
               src="/logo.png"
               alt="YOSHKITOBCHI"
               className="
-                h-14
-                md:h-20
+                h-12
+                md:h-14
+
                 w-auto
                 object-contain
               "
@@ -94,15 +147,17 @@ export default function Navbar() {
                   group
                   relative
 
+                  py-2
+
                   text-[15px]
                   font-semibold
                   tracking-[-0.01em]
 
-                  text-gray-700
+                  text-slate-700
                   hover:text-indigo-600
 
                   transition-all
-                  duration-200
+                  duration-300
                 "
                 style={{
                   fontFamily: 'var(--font-inter)',
@@ -110,22 +165,46 @@ export default function Navbar() {
               >
                 {item.label}
 
+                {/* UNDERLINE */}
                 <span
                   className="
                     absolute
                     left-0
-                    -bottom-[6px]
+                    bottom-0
 
                     h-[2px]
                     w-0
 
                     rounded-full
-                    bg-indigo-500
+
+                    bg-gradient-to-r
+                    from-indigo-500
+                    to-violet-500
 
                     transition-all
                     duration-300
 
                     group-hover:w-full
+                  "
+                />
+
+                {/* HOVER GLOW */}
+                <span
+                  className="
+                    absolute
+                    inset-0
+
+                    rounded-xl
+
+                    bg-indigo-500/[0.04]
+
+                    opacity-0
+                    group-hover:opacity-100
+
+                    transition-all
+                    duration-300
+
+                    -z-10
                   "
                 />
               </a>
@@ -140,21 +219,30 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               className="
+                group
+                relative
+
+                overflow-hidden
+
                 px-5
                 py-2.5
 
                 rounded-2xl
 
                 border
-                border-indigo-200
+                border-white/40
 
-                bg-white/70
+                bg-[rgba(255,255,255,0.4)]
+
                 backdrop-blur-xl
+                backdrop-saturate-150
 
                 text-indigo-600
 
-                hover:bg-indigo-50
-                hover:border-indigo-300
+                shadow-[0_4px_20px_rgba(99,102,241,0.08)]
+
+                hover:bg-indigo-50/80
+                hover:border-indigo-200
 
                 transition-all
                 duration-300
@@ -166,7 +254,27 @@ export default function Navbar() {
                 letterSpacing: '-0.01em',
               }}
             >
-              Telegram
+              <span className="relative z-10">
+                Telegram
+              </span>
+
+              <div
+                className="
+                  absolute
+                  inset-0
+
+                  bg-gradient-to-r
+                  from-white/0
+                  via-white/40
+                  to-white/0
+
+                  translate-x-[-120%]
+                  group-hover:translate-x-[120%]
+
+                  transition-transform
+                  duration-1000
+                "
+              />
             </a>
 
             {/* REGISTER */}
@@ -175,6 +283,8 @@ export default function Navbar() {
               target="_blank"
               rel="noreferrer"
               className="
+                relative
+
                 px-6
                 py-2.5
 
@@ -184,13 +294,15 @@ export default function Navbar() {
 
                 bg-gradient-to-r
                 from-indigo-500
-                to-indigo-600
+                via-indigo-600
+                to-violet-600
 
-                shadow-lg
-                shadow-indigo-200/40
+                shadow-[0_10px_30px_rgba(99,102,241,0.28)]
 
-                hover:scale-[1.02]
-                hover:shadow-indigo-300/40
+                hover:scale-[1.03]
+                hover:shadow-[0_14px_40px_rgba(99,102,241,0.35)]
+
+                active:scale-[0.99]
 
                 transition-all
                 duration-300
@@ -206,12 +318,14 @@ export default function Navbar() {
             </a>
           </div>
 
-          {/* MOBILE TOGGLE */}
+          {/* MOBILE BUTTON */}
           <button
             type="button"
             onClick={() => setMobileOpen(!mobileOpen)}
             className="
               lg:hidden
+
+              relative
 
               w-11
               h-11
@@ -221,20 +335,27 @@ export default function Navbar() {
               border
               border-white/40
 
-              bg-white/70
+              bg-[rgba(255,255,255,0.35)]
+
               backdrop-blur-xl
+              backdrop-saturate-150
 
               flex
               items-center
               justify-center
 
+              shadow-[0_4px_20px_rgba(99,102,241,0.08)]
+
               transition-all
+              duration-300
+
+              hover:scale-[1.03]
             "
           >
             {mobileOpen ? (
-              <X className="w-5 h-5 text-gray-700" />
+              <X className="w-5 h-5 text-slate-700" />
             ) : (
-              <Menu className="w-5 h-5 text-gray-700" />
+              <Menu className="w-5 h-5 text-slate-700" />
             )}
           </button>
         </div>
@@ -244,40 +365,47 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={{ opacity: 0, y: -14 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.22 }}
+            exit={{ opacity: 0, y: -14 }}
+            transition={{ duration: 0.25 }}
             className="
               lg:hidden
 
               border-t
-              border-white/40
+              border-white/30
 
-              bg-white/82
+              bg-[rgba(255,255,255,0.38)]
+
+              supports-[backdrop-filter]:bg-[rgba(255,255,255,0.24)]
+
               backdrop-blur-2xl
+              backdrop-saturate-150
             "
           >
             <div className="px-5 py-5 flex flex-col gap-2">
-              {/* NAV ITEMS */}
+              {/* MOBILE NAV ITEMS */}
               {navItems.map((item) => (
                 <a
                   key={item.label}
                   href={item.href}
                   onClick={() => setMobileOpen(false)}
                   className="
-                    block
+                    flex
+                    items-center
 
                     px-4
                     py-3
 
                     rounded-2xl
 
-                    text-gray-700
+                    text-slate-700
+
+                    hover:bg-indigo-50/70
                     hover:text-indigo-600
-                    hover:bg-indigo-50
 
                     transition-all
+                    duration-300
                   "
                   style={{
                     fontFamily: 'var(--font-inter)',
@@ -292,6 +420,7 @@ export default function Navbar() {
 
               {/* ACTIONS */}
               <div className="pt-4 flex flex-col gap-3">
+                {/* TELEGRAM */}
                 <a
                   href="https://t.me/yoshkitobchi"
                   target="_blank"
@@ -302,14 +431,19 @@ export default function Navbar() {
                     rounded-2xl
 
                     border
-                    border-indigo-200
+                    border-white/40
 
-                    bg-white
+                    bg-[rgba(255,255,255,0.45)]
+
+                    backdrop-blur-xl
 
                     text-indigo-600
                     text-center
 
+                    shadow-[0_4px_20px_rgba(99,102,241,0.08)]
+
                     transition-all
+                    duration-300
                   "
                   style={{
                     fontFamily: 'var(--font-inter)',
@@ -321,6 +455,7 @@ export default function Navbar() {
                   Telegram kanal
                 </a>
 
+                {/* REGISTER */}
                 <a
                   href="https://t.me/yoshkitobchibot?start=register"
                   target="_blank"
@@ -335,10 +470,13 @@ export default function Navbar() {
 
                     bg-gradient-to-r
                     from-indigo-500
-                    to-indigo-600
+                    via-indigo-600
+                    to-violet-600
 
-                    shadow-lg
-                    shadow-indigo-200/40
+                    shadow-[0_10px_30px_rgba(99,102,241,0.25)]
+
+                    transition-all
+                    duration-300
                   "
                   style={{
                     fontFamily: 'var(--font-inter)',
