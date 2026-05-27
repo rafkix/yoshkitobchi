@@ -20,49 +20,8 @@ export function CertificatesSection() {
 
         py-24
         md:py-32
-
-        bg-gradient-to-b
-        from-white
-        to-indigo-50/40
       "
     >
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div
-          className="
-            absolute
-            top-[-250px]
-            left-[-150px]
-
-            w-[600px]
-            h-[600px]
-
-            rounded-full
-
-            bg-indigo-100/40
-
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            absolute
-            bottom-[-250px]
-            right-[-150px]
-
-            w-[600px]
-            h-[600px]
-
-            rounded-full
-
-            bg-indigo-200/30
-
-            blur-3xl
-          "
-        />
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
         {/* HEADER */}
         <motion.div

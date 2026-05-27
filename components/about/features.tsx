@@ -38,43 +38,8 @@ export function FeaturesSection() {
 
         px-4
         md:px-8
-
-        bg-[#fafafa]
       "
         >
-            {/* BG */}
-            <div className="absolute inset-0 overflow-hidden pointer-events-none">
-                <div
-                    className="
-            absolute
-            top-[-200px]
-            right-[-100px]
-
-            w-[500px]
-            h-[500px]
-
-            rounded-full
-            bg-indigo-100/40
-            blur-3xl
-          "
-                />
-
-                <div
-                    className="
-            absolute
-            bottom-[-100px]
-            left-[-100px]
-
-            w-[400px]
-            h-[400px]
-
-            rounded-full
-            bg-violet-100/40
-            blur-3xl
-          "
-                />
-            </div>
-
             <div className="relative z-10 max-w-7xl mx-auto">
                 {/* TOP */}
                 <div className="max-w-3xl mb-20">

@@ -60,40 +60,6 @@ export function FeaturesSection() {
         overflow-hidden
       "
     >
-      {/* BACKGROUND */}
-      <div className="absolute inset-0">
-        <div
-          className="
-            absolute
-            top-0
-            left-1/2
-            -translate-x-1/2
-
-            w-[900px]
-            h-[500px]
-
-            rounded-full
-            bg-indigo-100/30
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            absolute
-            bottom-0
-            right-0
-
-            w-[300px]
-            h-[300px]
-
-            rounded-full
-            bg-indigo-100/20
-            blur-3xl
-          "
-        />
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
         {/* TOP */}
         <motion.div
@@ -111,6 +77,7 @@ export function FeaturesSection() {
           viewport={{ once: true }}
           className="text-center mb-16"
         >
+          {/* BADGE */}
           <div
             className="
               inline-flex
@@ -123,15 +90,17 @@ export function FeaturesSection() {
               rounded-full
 
               border
-              border-indigo-100
+              border-white/40
 
-              bg-white
+              bg-white/50
+              backdrop-blur-xl
 
               text-[#4f46e5]
               text-sm
               font-semibold
 
-              shadow-md
+              shadow-lg
+              shadow-indigo-200/10
 
               mb-6
             "
@@ -142,6 +111,7 @@ export function FeaturesSection() {
             Zamonaviy online kitobxonlik tizimi
           </div>
 
+          {/* TITLE */}
           <h2
             className="
               text-4xl
@@ -159,6 +129,7 @@ export function FeaturesSection() {
             PLATFORMA IMKONIYATLARI
           </h2>
 
+          {/* DESCRIPTION */}
           <p
             className="
               max-w-3xl
@@ -221,18 +192,19 @@ export function FeaturesSection() {
                   rounded-3xl
 
                   border
-                  border-indigo-100
+                  border-white/40
 
-                  bg-white/90
-                  backdrop-blur-xl
+                  bg-white/40
+                  backdrop-blur-2xl
 
                   p-7
                   md:p-8
 
-                  shadow-xl
-                  shadow-indigo-100/30
+                  shadow-lg
+                  shadow-indigo-200/20
 
                   transition-all
+                  duration-300
                 "
               >
                 {/* GLOW */}
@@ -247,7 +219,7 @@ export function FeaturesSection() {
 
                     rounded-full
 
-                    bg-indigo-100/40
+                    bg-indigo-100/30
                     blur-2xl
                   "
                 />
@@ -272,7 +244,7 @@ export function FeaturesSection() {
                     justify-center
 
                     shadow-lg
-                    shadow-indigo-200/50
+                    shadow-indigo-300/30
 
                     mb-6
                   "

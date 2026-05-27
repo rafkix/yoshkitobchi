@@ -47,40 +47,8 @@ export function BooksSection() {
         py-24
         md:py-32
         overflow-hidden
-        bg-gradient-to-b
-        from-[#f8faff]
-        to-white
       "
     >
-      {/* BACKGROUND */}
-      <div className="absolute inset-0 overflow-hidden">
-        <div
-          className="
-            absolute
-            top-[-200px]
-            left-[-150px]
-            w-[500px]
-            h-[500px]
-            rounded-full
-            bg-indigo-100/40
-            blur-3xl
-          "
-        />
-
-        <div
-          className="
-            absolute
-            bottom-[-250px]
-            right-[-150px]
-            w-[500px]
-            h-[500px]
-            rounded-full
-            bg-indigo-100/40
-            blur-3xl
-          "
-        />
-      </div>
-
       <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-6">
         {/* HEADER */}
         <motion.div
