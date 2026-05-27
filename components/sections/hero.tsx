@@ -167,7 +167,7 @@ export function HeroSection() {
             duration: 7,
             repeat: Infinity,
           }}
-          src="/book.png"
+          src="/book.webp"
           alt=""
           className="
             hidden
@@ -189,7 +189,7 @@ export function HeroSection() {
             duration: 8,
             repeat: Infinity,
           }}
-          src="/book.png"
+          src="/book.webp"
           alt=""
           className="
             hidden
