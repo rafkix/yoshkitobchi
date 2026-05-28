@@ -59,9 +59,8 @@ export default function Navbar() {
         transition-all
         duration-300
 
-        ${
-          isScrolled
-            ? `
+        ${isScrolled
+          ? `
               bg-[rgba(255,255,255,0.72)]
 
               supports-[backdrop-filter]:bg-[rgba(255,255,255,0.58)]
@@ -74,7 +73,7 @@ export default function Navbar() {
 
               shadow-[0_8px_40px_rgba(99,102,241,0.06)]
             `
-            : `
+          : `
               bg-white
               lg:bg-transparent
             `
